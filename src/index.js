@@ -10,11 +10,10 @@ root.render(
     <Global
       style={css`
         html {
-          margin: 0px;
+          margin: 0;
           padding: 0px;
         }
         body {
-          margin: 0px;
           padding: 0px;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
             'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
