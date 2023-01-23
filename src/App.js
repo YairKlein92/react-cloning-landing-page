@@ -191,6 +191,7 @@ const buttonMain = css`
 `;
 
 const logoGradientDiv = css`
+  position: relative;
   z-index: 3;
   display: flex;
   flex-direction: row;
@@ -198,7 +199,24 @@ const logoGradientDiv = css`
   align-items: center;
   margin-top: -24px;
   height: 174px;
-  padding: 0 * {
+  padding: 0;
+  ::before {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 15%,
+      rgba(255, 255, 255, 0) 85%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  * {
     max-width: 100px;
   }
 `;
