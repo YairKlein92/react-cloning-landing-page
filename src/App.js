@@ -49,8 +49,10 @@ const mainStyles = css`
   }
 `;
 const navStyles = css`
+  position: relative;
+  z-index: 2;
   display: flex;
-  margin: 0 16px;
+  margin-bottom: 96px;
   justify-content: center;
   gap: 28px;
   background-color: transparent;
@@ -83,7 +85,7 @@ const navButtonStyles = css`
 const firstSectionStyles = css`
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 70px;
 `;
 const firstColumn = css`
   width: 600px;
@@ -93,7 +95,7 @@ const firstColumn = css`
 const secondColumn = css`
   z-index: 2;
 `;
-const PrimaryHeadingStyles = css`
+const primaryHeadingStyles = css`
   color: white;
   letter-spacing: -0.1px;
   font-size: 48px;
@@ -307,7 +309,7 @@ function App() {
           <section>
             <div css={firstSectionStyles}>
               <div css={firstColumn}>
-                <h1 css={PrimaryHeadingStyles}>Passwordless made easy</h1>
+                <h1 css={primaryHeadingStyles}>Passwordless made easy</h1>
                 <p>More registrations, More logins</p>
                 <p>
                   OwnID is an add-on to your website's existing registration and
@@ -467,6 +469,7 @@ function App() {
             </div>
           </div>
         </section>
+        <section></section>
       </main>
     </>
   );
