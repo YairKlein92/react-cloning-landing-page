@@ -191,10 +191,55 @@ const buttonMain = css`
 `;
 
 const logoGradientDiv = css`
+  z-index: 3;
   display: flex;
   flex-direction: row;
-  * {
-    height: 140px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: -24px;
+  height: 174px;
+  padding: 0 * {
+    max-width: 100px;
+  }
+`;
+const phoneIsTheKeySection = css`
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 20px;
+  background-color: #fafafa;
+  height: 650px;
+`;
+
+const phoneIsTheKeyDiv = css`
+  margin-left: 140px;
+  margin-right: 140px;
+`;
+const phoneIsTheKeyHeader = css`
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  color: #217aff;
+  font-size: 4.5rem;
+`;
+const phoneIsTheKeyPar = css`
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: #222222;
+  padding: 1rem;
+`;
+const phoneIsTheKeyPics = css`
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 1.2rem;
+  > div,
+  img {
+    max-height: 160px;
+    line-height: 1.8rem;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #222222;
   }
 `;
 function App() {
@@ -297,59 +342,110 @@ function App() {
           <div css={logoGradientDiv}>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/611608a6869fdc82f92072bc_2560px-SAP_2011_logo.svg.png"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/63359f54f84c7d551ebb475a_Nestle.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/633599a4eb6ab804f0a5afe3_Kenwood.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/633599a4cacc9a180913d47a_Braun.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/633599a4dfc7c529f47403ae_Gist.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/637bc5fa500b3c662efd00e2_Carrefour_logo%201.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/63359a843b889ef15188f377_Carnival.png"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/631833479f6923d70f39d087_Bayer%2090x90.svg"
                 loading="lazy"
                 alt=""
               />
             </div>
             <div>
               <img
-                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/61dea3bc7ad8757aca5e4ad1_bayer_logo.svg"
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/633599a43d0add49b6de83a9_Daimani.svg"
                 loading="lazy"
                 alt=""
               />
+            </div>
+          </div>
+        </section>
+        <section css={phoneIsTheKeySection}>
+          <div css={phoneIsTheKeyDiv}>
+            <h1 css={phoneIsTheKeyHeader}>The Phone is the Key</h1>
+            <p css={phoneIsTheKeyPar}>
+              Users’ authentication keys are cryptographically stored on their
+              phone
+              <br /> and are used to log in on any device.
+            </p>
+            <div css={phoneIsTheKeyPics}>
+              <div>
+                <img
+                  src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/631f50f031f15b084547c316_PHONE%20BIO.png"
+                  alt="smartphone"
+                />
+                <p>
+                  When browsing <br /> with a phone
+                </p>
+              </div>
+              <div>
+                <img
+                  src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/631f4ad5a00dbbee91111f08_DESKTOP.png"
+                  alt="smartTV"
+                />
+                <p>
+                  When browsing <br />
+                  on a desktop
+                </p>
+              </div>
+              <div>
+                <img
+                  src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/631f4b0002fd104f39dd69c9_SHARED%20PC.png"
+                  alt="smartTV"
+                />
+                <p>
+                  When using
+                  <br /> a shared computer
+                </p>
+              </div>
+              <div>
+                <img
+                  src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/631f50ebf538678321fc8401_PASSKEYS.png"
+                  alt="laptop"
+                />
+                <p>
+                  When using Passkeys <br />
+                  on a desktop
+                </p>
+              </div>
             </div>
           </div>
         </section>
