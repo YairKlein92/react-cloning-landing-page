@@ -267,6 +267,7 @@ const simpleSetupStyles = css`
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   display: flex;
+  gap: 16px;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
@@ -276,7 +277,7 @@ const simpleSetupStyles = css`
 
 const simpleSetupHeader = css`
   color: #217aff;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
 `;
 const simpleSetupPar = css`
@@ -303,6 +304,7 @@ const simpleSetupDiv = css`
 const readTheDocs = css`
   color: white;
   background-color: #3880ff;
+  background-image: linear-gradient(90deg, #616fe3, #4686fe);
   padding: 18px 48px;
   font-weight: 700;
   letter-spacing: 0.1rem;
@@ -319,6 +321,60 @@ const openConsole = css`
   border-radius: 8px;
   border: 2px solid;
 `;
+const simpleSetUpJS = css`
+  position: relative;
+  color: white;
+  background-color: #24232a;
+  padding: 32px 0px 32px 32px;
+  font-family: Inconsolata, monospace;
+  font-size: 1rem;
+  border: 4px solid #e2e7f0;
+  border-radius: 8px;
+  font-weight: 400;
+  width: 540px;
+  height: 280px;
+  line-height: 2;
+`;
+
+const simpleSetUpJSText = css`
+  position: absolute;
+  top: 50%;
+  margin-top: -64px;
+`;
+const reviewSection = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
+  padding: 32px 0px 48px;
+  background-color: #fafafa;
+  border-radius: 20px;
+`;
+const reviewSectionText = css`
+  position: relative;
+  width: 420px;
+  padding-top: 20px;
+  line-height: 2.5rem;
+  color: #292929;
+  font-size: 20px;
+  font-style: italic;
+`;
+const reviewSectionTextSignature = css`
+  width: 420px;
+  padding-top: 36px;
+  color: #292929;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 2.5rem;
+`;
+const reviewSectionDiv = css``;
+const reviewSectionLogoDiv = css`
+  width: 420px;
+  display: flex;
+  justify-content: center;
+`;
+const customerLogo = css``;
+
 function App() {
   return (
     <>
@@ -545,7 +601,50 @@ function App() {
               </a>
             </div>
           </div>
-          <div></div>
+          <div css={simpleSetUpJS}>
+            <div css={simpleSetUpJSText}>
+              {`ownid(‘register’, {`}
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`passwordField:`} &nbsp;
+              {`document.querySelector(‘#password’),`}
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`loginIdField:`} &nbsp;
+              {`document.querySelector(‘#email’);`}
+              <br />
+              {`})`}
+            </div>
+          </div>
+        </section>
+        <section css={reviewSection}>
+          <div css={reviewSectionDiv}>
+            <div css={reviewSectionLogoDiv}>
+              <img
+                css={customerLogo}
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/611608a6869fdc82f92072bc_2560px-SAP_2011_logo.svg.png"
+                loading="lazy"
+                width="108"
+                sizes="(max-width: 479px) 100vw, (max-width: 1279px) 108px, (max-width: 1439px) 8vw, 108px"
+                alt="logos"
+                class="customer-logo sap"
+                aria-hidden="true"
+              />
+            </div>
+            <div css={reviewSectionText}>
+              "We're excited to be OwnID's launch partner. We’ve seen great
+              growth and engagement from people visiting our website and are
+              always looking for innovative ways to improve their experience.
+              Using OwnID’s passwordless solution helps make the key task of
+              registering or logging in even easier." —James Sinfield, Digital &
+              eBusiness Lead, Beverages - Nescafé UK
+            </div>
+            <div css={reviewSectionTextSignature}>
+              ‍ —James Sinfield, Digital & eBusiness Lead, Beverages - Nescafé
+              UK
+            </div>
+          </div>
+        </section>
+        <section css={tryOwnIDSection}>
+          <h2>Try OwnID Now.</h2>
         </section>
       </main>
     </>
