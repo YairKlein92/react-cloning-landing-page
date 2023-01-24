@@ -262,6 +262,63 @@ const phoneIsTheKeyPics = css`
     color: #222222;
   }
 `;
+const simpleSetupStyles = css`
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 4rem;
+  word-spacing: 1.8px;
+`;
+
+const simpleSetupHeader = css`
+  color: #217aff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+`;
+const simpleSetupPar = css`
+  font-weight: 300;
+  line-height: 2rem;
+  font-size: 1.25rem;
+  color: #222222;
+  margin-bottom: 3rem;
+`;
+const simpleSetupDiv = css`
+  a {
+    text-decoration: none;
+  }
+  div {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 12px 0px 15px;
+    width: 240px;
+    font-size: 14.4px;
+    font-weight: 800;
+  }
+`;
+const readTheDocs = css`
+  color: white;
+  background-color: #3880ff;
+  padding: 18px 48px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border-radius: 8px;
+`;
+const openConsole = css`
+  color: #3880ff;
+  background-color: white;
+  padding: 18px 48px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 2px solid;
+`;
 function App() {
   return (
     <>
@@ -273,9 +330,9 @@ function App() {
           alt=""
           className="live-webinar"
         />
-        <div css={textHeader}>
+        <span css={textHeader}>
           Unlock the Benefits and Challenges of Passwordless Authentication
-        </div>
+        </span>
         <a href="/#">
           <div css={buttonHeader}>Reserve Your Spot</div>
         </a>
@@ -469,7 +526,27 @@ function App() {
             </div>
           </div>
         </section>
-        <section></section>
+        <section css={simpleSetupStyles}>
+          <div css={simpleSetupDiv}>
+            <h2 css={simpleSetupHeader}>Simple setup</h2>
+            <p css={simpleSetupPar}>
+              Add the OwnID widget to your existing
+              <br /> flows and enable passwordless
+              <br /> authentication within minutes.
+            </p>
+            <div>
+              <a href="/#" css={readTheDocs}>
+                Read the docs
+              </a>
+            </div>
+            <div>
+              <a href="/#" css={openConsole}>
+                Open console
+              </a>
+            </div>
+          </div>
+          <div></div>
+        </section>
       </main>
     </>
   );
