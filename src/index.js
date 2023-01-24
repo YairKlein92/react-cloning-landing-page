@@ -1,24 +1,19 @@
+import { css, Global } from '@emotion/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Global, css } from '@emotion/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Global
       style={css`
-        html {
-          margin: 0;
-          padding: 0px;
-        }
         body {
-          padding: 0px;
-          font-family: 'Circular Std', sans-serif
+          margin: 0;
+          font-family: 'Circular Std', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-
         }
 
         code {

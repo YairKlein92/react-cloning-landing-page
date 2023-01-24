@@ -6,8 +6,11 @@ const headerStyles = css`
   background-color: #8cb2eb;
   display: flex;
   justify-content: space-around;
-  padding: 12px;
+  padding: 8px;
   margin: 0;
+  :hover {
+    background-color: #7baaf1;
+  }
   > a {
     text-decoration: none;
     color: black;
@@ -39,7 +42,7 @@ const mainStyles = css`
     width: 100%;
     height: 100%;
     background-color: #22262b;
-    background-image: url(https://assets.website-files.com/608fe8d…/60c2288…_Visual%20Grid.png),
+    background-image: url(https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/60c228877719ed596af9b1a8_Visual%20Grid.png),
       linear-gradient(135deg, #217aff, rgba(33, 122, 255, 0) 46%),
       linear-gradient(191deg, #870bd5, rgba(146, 73, 157, 0) 65%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
@@ -52,8 +55,9 @@ const navStyles = css`
   position: relative;
   z-index: 2;
   display: flex;
-  margin-bottom: 96px;
+  margin-bottom: 60px;
   justify-content: center;
+  align-items: center;
   gap: 28px;
   background-color: transparent;
   padding: 18px;
@@ -69,14 +73,20 @@ const listNavStyles = css`
       font-family: 'Circular Std', sans-serif;
       text-decoration: none;
       padding: 0 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: capitalize;
     }
   }
 `;
 
 const navButtonStyles = css`
   color: white;
+  font-family: 'Circular Std', sans-serif;
   background-color: #3880ff;
-  padding: 8px 24px;
+  background-image: linear-gradient(90deg, #616fe3, #4686fe);
+  padding: 12px 40px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -375,6 +385,90 @@ const reviewSectionLogoDiv = css`
 `;
 const customerLogo = css``;
 
+const tryOwnIDSection = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 700px;
+  background-image: url('https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/60c2184c00f3b900ba1f4644_Background%20Bottom.svg');
+  background-size: 1950px;
+`;
+const tryOwnIDHeader = css`
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 4rem;
+  font-weight: 700;
+  background-image: linear-gradient(180deg, #217aff, #217aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+const tryOwnIDPar = css`
+  font-size: 2rem;
+`;
+const buttonContainerDiv = css`
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+  margin-top: 24px;
+  a {
+    text-decoration: none;
+  }
+`;
+const footerStyles = css`
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  background-color: #22262b;
+  padding: 16px;
+  ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    :first-child > :nth-child(4) {
+      color: white;
+    }
+    li {
+      padding: 12px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    li:first-child {
+      color: #7c889c;
+      margin: 16px 0px 0px;
+      padding: 12px;
+    }
+  }
+`;
+const ownIDLogoFooter = css`
+  margin: 16px 0 0;
+  padding: 12px;
+`;
+const unstyledListElement = css`
+  color: white;
+`;
+const footerSticky = css`
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: #626262;
+  text-align: center;
+  background: #dfdfdf;
+  min-height: 50px;
+  width: 100%;
+  a {
+    color: #626262;
+  }
+`;
 function App() {
   return (
     <>
@@ -382,7 +476,7 @@ function App() {
         <img
           src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/63bc39beae9399526264737b_cta.svg"
           loading="lazy"
-          width="148"
+          width="140"
           alt=""
           className="live-webinar"
         />
@@ -396,7 +490,13 @@ function App() {
       <main>
         <section css={mainStyles}>
           <nav css={navStyles}>
-            <img src="logo.svg" alt="logo" />
+            <div>
+              <img
+                src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/60b4db04abd46a01a321d6b8_Logo.svg"
+                loading="lazy"
+                alt="logo"
+              />
+            </div>
             <ul css={listNavStyles}>
               <li>
                 <a href="/#">Product</a>
@@ -438,7 +538,6 @@ function App() {
                     <button>
                       <svg
                         css={fingerTip}
-                        class="fingerprint icon"
                         aria-hidden="true"
                         viewBox="0 0 24 24"
                       >
@@ -625,7 +724,6 @@ function App() {
                 width="108"
                 sizes="(max-width: 479px) 100vw, (max-width: 1279px) 108px, (max-width: 1439px) 8vw, 108px"
                 alt="logos"
-                class="customer-logo sap"
                 aria-hidden="true"
               />
             </div>
@@ -644,9 +742,94 @@ function App() {
           </div>
         </section>
         <section css={tryOwnIDSection}>
-          <h2>Try OwnID Now.</h2>
+          <h2 css={tryOwnIDHeader}>Try OwnID Now.</h2>
+          <p css={tryOwnIDPar}>
+            Add passwordless <br /> within less than 1 hour
+          </p>
+          <div css={buttonContainerDiv}>
+            <div>
+              <a href="/#" css={readTheDocs}>
+                Start free
+              </a>
+            </div>
+            <div>
+              <a href="/#" css={openConsole}>
+                Open console
+              </a>
+            </div>
+          </div>
         </section>
       </main>
+      <footer css={footerStyles}>
+        <div>
+          <img
+            css={ownIDLogoFooter}
+            src="https://assets.website-files.com/608fe8d2d3306b39e7dbf1a4/60b4db04abd46a01a321d6b8_Logo.svg"
+            loading="lazy"
+            alt="logo"
+          />
+        </div>
+        <ul>
+          <li>Ownid</li>
+          <li>
+            <a href="/#">Product</a>
+          </li>
+          <li>
+            <a href="/#">Customers</a>
+          </li>
+          <li css={unstyledListElement}>Resources</li>
+          <li>
+            <a href="/#">Docs</a>
+          </li>
+          <li>
+            <a href="/#">Blog</a>
+          </li>
+          <li>
+            <a href="/#">Discord</a>
+          </li>
+        </ul>
+        <ul>
+          <li>Legal</li>
+          <li>
+            <a href="/#">Terms of Service</a>
+          </li>
+          <li>
+            <a href="/#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="/#">Terms of Use {`(End-Users)`}</a>
+          </li>
+          <li>
+            <a href="/#">CCPA Privacy Notice</a>
+          </li>
+        </ul>
+        <ul>
+          <li>Company</li>
+          <li>
+            <a href="/#">Contact Us</a>
+          </li>
+          <li>
+            <a href="/#">Mission & Team</a>
+          </li>
+          <li>
+            <a href="/#">Media</a>
+          </li>
+          <li>
+            <a href="/#">LinkedIn</a>
+          </li>
+        </ul>
+      </footer>
+      <footer>
+        <div css={footerSticky}>
+          <div>
+            We use cookies on our website. By using our site you consent
+            cookies.
+          </div>
+          <div>
+            <a href="/#">Accept All</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
