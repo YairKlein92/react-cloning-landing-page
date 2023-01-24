@@ -450,7 +450,7 @@ const ownIDLogoFooter = css`
   padding: 12px;
 `;
 const unstyledListElement = css`
-  color: white;
+  color: #7c889c;
 `;
 const footerSticky = css`
   position: fixed;
