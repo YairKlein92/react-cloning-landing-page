@@ -242,8 +242,8 @@ const logoGradientDiv = css`
     position: absolute;
     height: 100%;
     width: 100%;
-    background: -webkit-linear-gradient(
-      left,
+    background: linear-gradient(
+      to left,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 0) 15%,
       rgba(255, 255, 255, 0) 85%,
@@ -440,7 +440,7 @@ const tryOwnIDHeader = css`
   font-size: 4rem;
   font-weight: 700;
   background-image: linear-gradient(180deg, #217aff, #217aff);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
 const tryOwnIDPar = css`
@@ -748,11 +748,11 @@ function App() {
             <div css={simpleSetUpJSText}>
               {`ownid(‘register’, {`}
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`passwordField:`} &nbsp;
-              {`document.querySelector(‘#password’),`}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;passwordField: &nbsp;
+              document.querySelector(‘#password’),
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`loginIdField:`} &nbsp;
-              {`document.querySelector(‘#email’);`}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loginIdField: &nbsp;
+              document.querySelector(‘#email’);
               <br />
               {`})`}
             </div>
@@ -841,7 +841,7 @@ function App() {
             <a href="/#">Privacy Policy</a>
           </li>
           <li>
-            <a href="/#">Terms of Use {`(End-Users)`}</a>
+            <a href="/#">Terms of Use (End-Users)</a>
           </li>
           <li>
             <a href="/#">CCPA Privacy Notice</a>
