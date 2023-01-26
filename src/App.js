@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 const headerStyles = css`
   background-color: #8cb2eb;
@@ -68,6 +68,12 @@ const listNavStyles = css`
   gap: 16px;
   margin: 8px 0px;
   > li {
+    transition: transform 0.2s, -webkit-transform 0.2s;
+
+    :hover {
+      transform: scale(1.05) perspective(1px);
+    }
+
     > a {
       color: white;
       font-family: 'Circular Std', sans-serif;
@@ -91,6 +97,11 @@ const navButtonStyles = css`
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  :hover {
+    transform: scale(1.05) perspective(1px);
+  }
 `;
 const firstSectionStyles = css`
   display: flex;
@@ -174,9 +185,21 @@ const divPassword = css`
   justify-content: center;
   align-items: center;
 `;
+const fingerTipButton = css`
+  background-color: white;
+  border-radius: 6px;
+  border: 1px #d0d0d0 solid;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s;
+  :hover {
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+`;
 const fingerTip = css`
   width: 24.5px;
   height: 27.3px;
+  color: blue;
 `;
 const inputSpan = css`
   font-size: 10px;
@@ -232,6 +255,16 @@ const logoGradientDiv = css`
     max-width: 100px;
   }
 `;
+
+const moveUp = keyframes({
+  '0%': {
+    transform: 'translate3d(0px, 8px, 0px)',
+  },
+  '100%': {
+    transform: 'translate3d(0px, -16px, 0px)',
+  },
+});
+
 const phoneIsTheKeySection = css`
   text-align: center;
   padding-top: 1rem;
@@ -239,6 +272,8 @@ const phoneIsTheKeySection = css`
   border-radius: 20px;
   background-color: #fafafa;
   height: 650px;
+  animation: ${moveUp} 0.5s ease-in-out;
+  animation-fill-mode: forwards;
 `;
 
 const phoneIsTheKeyDiv = css`
@@ -309,6 +344,10 @@ const simpleSetupDiv = css`
     width: 240px;
     font-size: 14.4px;
     font-weight: 800;
+    :hover {
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.05) perspective(1px);
+    }
   }
 `;
 const readTheDocs = css`
@@ -360,6 +399,7 @@ const reviewSection = css`
   background-color: #fafafa;
   border-radius: 20px;
 `;
+
 const reviewSectionText = css`
   position: relative;
   width: 420px;
@@ -406,12 +446,16 @@ const tryOwnIDHeader = css`
 const tryOwnIDPar = css`
   font-size: 2rem;
 `;
+
 const buttonContainerDiv = css`
   display: flex;
   justify-content: center;
-
   gap: 8px;
   margin-top: 24px;
+  div:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
   a {
     text-decoration: none;
   }
@@ -535,7 +579,7 @@ function App() {
                   </div>
                   <input css={emailInput} placeholder="E-mail" />
                   <div css={divPassword}>
-                    <button>
+                    <button css={fingerTipButton}>
                       <svg
                         css={fingerTip}
                         aria-hidden="true"
